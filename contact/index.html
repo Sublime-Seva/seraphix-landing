@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Seraphix Systems</title>
+  <meta name="description" content="Request a demo from Seraphix Systems. Submit your name, company, email, and message for follow-up." />
+  <meta name="theme-color" content="#090b10" />
+  <meta property="og:title" content="Contact — Seraphix Systems" />
+  <meta property="og:description" content="Autonomous Intelligence. Actionable Signals." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #090b10;
+      --text: #f5f7fb;
+      --muted: #98a2b3;
+      --line: rgba(255,255,255,0.09);
+      --line-strong: rgba(255,255,255,0.16);
+      --accent: #6ee7ff;
+      --accent-2: #7c84ff;
+      --accent-3: #56f0a9;
+      --panel: rgba(13, 17, 25, 0.92);
+      --shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 24px 64px rgba(0,0,0,0.42);
+      --container: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 14%, rgba(124,132,255,0.18), transparent 28%),
+        radial-gradient(circle at 82% 10%, rgba(110,231,255,0.14), transparent 22%),
+        radial-gradient(circle at 50% 100%, rgba(86,240,169,0.08), transparent 30%),
+        linear-gradient(180deg, #090b10 0%, #0b0e14 46%, #090b10 100%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .shell {
+      width: min(100% - 32px, var(--container));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: #c8d0dd;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-family: 'Geist Mono', ui-monospace, monospace;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 18px rgba(110,231,255,0.75);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(9, 11, 16, 0.74);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      padding: 8px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(124,132,255,0.28), rgba(110,231,255,0.16));
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 12px 28px rgba(7,10,16,0.55);
+    }
+
+    .brand-copy small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 2px;
+      font-family: 'Geist Mono', ui-monospace, monospace;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: #c6cfdb;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    main { padding: 72px 0 56px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(17,22,31,0.9), rgba(10,14,21,0.96));
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      padding: 32px;
+    }
+
+    h1 {
+      margin: 18px 0 14px;
+      font-size: clamp(2.7rem, 6vw, 4.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.065em;
+      max-width: 10ch;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.55rem;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    p {
+      margin: 0;
+      color: #c2ccda;
+    }
+
+    p + p { margin-top: 14px; }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 26px 0 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .info-list li {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 12px;
+      color: #d8e2ef;
+    }
+
+    .info-list li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-top: 8px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      box-shadow: 0 0 16px rgba(110,231,255,0.45);
+    }
+
+    .contact-meta {
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .contact-meta a { color: #d8e3f0; }
+
+    form {
+      display: grid;
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      color: #e5ecf5;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      padding: 15px 16px;
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder { color: #7e8a9b; }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(110,231,255,0.5);
+      box-shadow: 0 0 0 4px rgba(110,231,255,0.12);
+      background: rgba(255,255,255,0.045);
+    }
+
+    textarea { min-height: 160px; }
+
+    .submit-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .fine-print {
+      color: var(--muted);
+      font-size: 0.9rem;
+      max-width: 44ch;
+    }
+
+    .cta,
+    .ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 14px 20px;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .cta {
+      color: #071018;
+      background: linear-gradient(135deg, var(--accent), #b0f2ff 55%, #ecfbff 100%);
+      box-shadow: 0 14px 36px rgba(87,210,241,0.22);
+    }
+
+    .ghost {
+      border: 1px solid var(--line-strong);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+    }
+
+    .cta:hover,
+    .ghost:hover { transform: translateY(-1px); }
+
+    .status {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(86,240,169,0.18);
+      background: rgba(86,240,169,0.08);
+      color: #dffef1;
+      display: none;
+    }
+
+    .status.show { display: block; }
+
+    footer {
+      padding: 0 0 36px;
+    }
+
+    .footer-line {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-line a { color: #d8e3f0; }
+
+    @media (max-width: 960px) {
+      .grid,
+      .field-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .panel { padding: 24px; }
+      main { padding-top: 52px; }
+      h1 { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell nav">
+      <a class="brand" href="/" aria-label="Seraphix Systems home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 5L40 13.5V34.5L24 43L8 34.5V13.5L24 5Z" stroke="url(#g1)" stroke-width="2.2" />
+            <path d="M16 28.5L24 13L32 28.5H16Z" stroke="url(#g2)" stroke-width="2.2" stroke-linejoin="round" />
+            <path d="M19.5 28.5H28.5L24 36L19.5 28.5Z" fill="url(#g3)" />
+            <defs>
+              <linearGradient id="g1" x1="8" y1="5" x2="41" y2="43" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#6EE7FF" />
+                <stop offset="1" stop-color="#7C84FF" />
+              </linearGradient>
+              <linearGradient id="g2" x1="16" y1="13" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#EAFDFF" />
+                <stop offset="1" stop-color="#6EE7FF" />
+              </linearGradient>
+              <linearGradient id="g3" x1="19.5" y1="28.5" x2="28.5" y2="36" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#56F0A9" />
+                <stop offset="1" stop-color="#6EE7FF" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="brand-copy">Seraphix Systems<small>Autonomous Intelligence</small></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/#features">Capabilities</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="mailto:seva@seraphix.systems">Email</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="shell grid">
+      <section class="panel">
+        <span class="eyebrow">Request Demo</span>
+        <h1>Talk to Seraphix Systems.</h1>
+        <p>
+          Use this form to request a demo, ask about pricing, or open an enterprise conversation. Provide your contact details and a short note about your team, use case, or area of interest.
+        </p>
+        <p>
+          Submissions are routed to seva@seraphix.systems for follow-up. This page is built for clean static deployment on Vercel while keeping the contact flow simple and direct.
+        </p>
+
+        <ul class="info-list">
+          <li>Maritime intelligence for route anomalies, chokepoints, and logistics disruption.</li>
+          <li>Geopolitical signals for fast-moving operational and market-sensitive events.</li>
+          <li>Corporate intelligence for catalyst monitoring, narrative shifts, and event-driven tracking.</li>
+        </ul>
+
+        <div class="contact-meta">
+          Direct email: <a href="mailto:seva@seraphix.systems">seva@seraphix.systems</a>
+        </div>
+      </section>
+
+      <section class="panel">
+        <span class="eyebrow">Contact form</span>
+        <h2>Request a demo or outreach call</h2>
+        <p>Tell us who you are, what your company does, and what kind of signal coverage you want to review.</p>
+
+        <div id="success" class="status" aria-live="polite">
+          Submission target prepared. After you submit, the form will forward to seva@seraphix.systems and return here with a confirmation state.
+        </div>
+
+        <form id="contact-form" action="https://formsubmit.co/seva@seraphix.systems" method="POST">
+          <input type="hidden" name="_subject" value="Seraphix Systems Demo Request" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" id="form-next" value="" />
+
+          <div class="field-grid">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your full name" required />
+            </label>
+            <label>
+              Company
+              <input type="text" name="company" placeholder="Company or fund name" required />
+            </label>
+          </div>
+
+          <div class="field-grid">
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@company.com" required />
+            </label>
+            <label>
+              Use case
+              <input type="text" name="use_case" placeholder="Maritime, geopolitical, corporate, or mixed" />
+            </label>
+          </div>
+
+          <label>
+            Message
+            <textarea name="message" placeholder="Tell us what you want to evaluate, your timing, and how Seraphix could fit your workflow." required></textarea>
+          </label>
+
+          <div class="submit-row">
+            <p class="fine-print">
+              This static form uses FormSubmit to forward messages to seva@seraphix.systems. On first live use, FormSubmit may send an activation email for forwarding confirmation.
+            </p>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <a class="ghost" href="/">Back to Home</a>
+              <button class="cta" type="submit">Send Request</button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="shell footer-line">
+      <span>© Seraphix Systems. Autonomous Intelligence. Actionable Signals.</span>
+      <a href="mailto:seva@seraphix.systems">seva@seraphix.systems</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var next = document.getElementById('form-next');
+      if (next) {
+        next.value = window.location.origin + '/contact?sent=1';
+      }
+      if (window.location.search.indexOf('sent=1') !== -1) {
+        var success = document.getElementById('success');
+        if (success) success.classList.add('show');
+      }
+    })();
+  </script>
+</body>
+</html>

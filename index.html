@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seraphix Systems — Autonomous Intelligence. Actionable Signals.</title>
+  <meta name="description" content="Seraphix Systems delivers machine-speed maritime, geopolitical, and corporate intelligence signals for desks, operators, and institutions." />
+  <meta name="theme-color" content="#090b10" />
+  <meta property="og:title" content="Seraphix Systems" />
+  <meta property="og:description" content="Autonomous Intelligence. Actionable Signals." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #090b10;
+      --bg-elevated: rgba(17, 22, 31, 0.92);
+      --panel: rgba(13, 17, 25, 0.88);
+      --panel-strong: rgba(17, 23, 34, 0.98);
+      --text: #f5f7fb;
+      --muted: #98a2b3;
+      --line: rgba(255, 255, 255, 0.09);
+      --line-strong: rgba(255, 255, 255, 0.16);
+      --accent: #6ee7ff;
+      --accent-2: #7c84ff;
+      --accent-3: #56f0a9;
+      --shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 24px 64px rgba(0,0,0,0.42);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(124, 132, 255, 0.18), transparent 28%),
+        radial-gradient(circle at 85% 12%, rgba(110, 231, 255, 0.16), transparent 24%),
+        radial-gradient(circle at 50% 100%, rgba(86, 240, 169, 0.08), transparent 30%),
+        linear-gradient(180deg, #090b10 0%, #0b0e14 46%, #090b10 100%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    img, svg { display: block; max-width: 100%; }
+
+    .shell {
+      width: min(100% - 32px, var(--container));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: #c8d0dd;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-family: 'Geist Mono', ui-monospace, monospace;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 20px rgba(110, 231, 255, 0.8);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(9, 11, 16, 0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 78px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      padding: 8px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(124, 132, 255, 0.28), rgba(110, 231, 255, 0.16));
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 12px 28px rgba(7, 10, 16, 0.55);
+    }
+
+    .brand-copy small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 2px;
+      font-family: 'Geist Mono', ui-monospace, monospace;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: #c6cfdb;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .cta,
+    .cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 14px 20px;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .cta {
+      color: #071018;
+      background: linear-gradient(135deg, var(--accent), #b0f2ff 55%, #ecfbff 100%);
+      box-shadow: 0 14px 36px rgba(87, 210, 241, 0.22);
+    }
+
+    .cta:hover,
+    .cta-secondary:hover {
+      transform: translateY(-1px);
+    }
+
+    .cta-secondary {
+      border: 1px solid var(--line-strong);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+    }
+
+    main { padding-bottom: 56px; }
+
+    .hero {
+      padding: 86px 0 48px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-panel,
+    .section-card,
+    .feature-card,
+    .pricing-card,
+    .cta-band {
+      background: linear-gradient(180deg, rgba(17, 22, 31, 0.9), rgba(10, 14, 21, 0.95));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      border-radius: 32px;
+      padding: 42px;
+    }
+
+    .hero h1 {
+      margin: 18px 0 18px;
+      font-size: clamp(3rem, 7vw, 5.75rem);
+      line-height: 0.96;
+      letter-spacing: -0.065em;
+      max-width: 10ch;
+    }
+
+    .hero p.lead {
+      max-width: 62ch;
+      margin: 0 0 28px;
+      color: #c2ccda;
+      font-size: 1.04rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .metric {
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.025);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.55rem;
+      letter-spacing: -0.05em;
+      margin-bottom: 6px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .hero-panel {
+      border-radius: 32px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      inset: auto -15% -20% auto;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(110,231,255,0.22), transparent 65%);
+      z-index: -1;
+    }
+
+    .signal-map {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .signal-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .signal-row label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #cbd5e1;
+      font-family: 'Geist Mono', ui-monospace, monospace;
+    }
+
+    .signal-bar {
+      position: relative;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
+
+    .signal-bar::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: var(--width);
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 24px rgba(124,132,255,0.36);
+    }
+
+    .section {
+      padding: 36px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 56ch;
+      color: var(--muted);
+    }
+
+    .value-grid,
+    .features-grid,
+    .pricing-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .value-grid {
+      grid-template-columns: 1.15fr 0.85fr;
+    }
+
+    .section-card {
+      border-radius: 28px;
+      padding: 30px;
+    }
+
+    .section-card p {
+      margin: 0;
+      color: #c2ccda;
+      font-size: 1.04rem;
+    }
+
+    .section-card p + p { margin-top: 14px; }
+
+    .bullet-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .bullet-list li {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 12px;
+      color: #d7deea;
+    }
+
+    .bullet-list li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-top: 8px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      box-shadow: 0 0 16px rgba(110,231,255,0.45);
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .feature-card,
+    .pricing-card {
+      border-radius: 26px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before,
+    .pricing-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(110,231,255,0.4), transparent 70%);
+    }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(110,231,255,0.08);
+      border: 1px solid rgba(110,231,255,0.14);
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3,
+    .pricing-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.45rem;
+      letter-spacing: -0.04em;
+    }
+
+    .feature-card p,
+    .pricing-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .pricing-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
+    .pricing-card.featured {
+      background: linear-gradient(180deg, rgba(20, 28, 42, 0.98), rgba(11, 17, 27, 1));
+      border-color: rgba(110,231,255,0.25);
+      transform: translateY(-4px);
+    }
+
+    .price {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin: 18px 0;
+    }
+
+    .price strong {
+      font-size: 2.9rem;
+      line-height: 1;
+      letter-spacing: -0.07em;
+    }
+
+    .price span {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .tier-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 26px;
+      display: grid;
+      gap: 12px;
+      color: #d5dde8;
+    }
+
+    .tier-list li {
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .tier-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .cta-band {
+      border-radius: 32px;
+      padding: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 8px;
+    }
+
+    .cta-band h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .cta-band p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 52ch;
+    }
+
+    footer {
+      padding: 22px 0 36px;
+    }
+
+    .footer-line {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-line a {
+      color: #d8e3f0;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .value-grid,
+      .features-grid,
+      .pricing-grid,
+      .cta-band {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-band {
+        display: grid;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .hero-copy,
+      .hero-panel,
+      .section-card,
+      .feature-card,
+      .pricing-card,
+      .cta-band {
+        padding: 24px;
+      }
+
+      .hero-metrics {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .shell {
+        width: min(100% - 20px, var(--container));
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      .hero h1 {
+        max-width: none;
+      }
+
+      .section-head {
+        align-items: start;
+      }
+
+      .signal-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell nav">
+      <a class="brand" href="#top" aria-label="Seraphix Systems home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 5L40 13.5V34.5L24 43L8 34.5V13.5L24 5Z" stroke="url(#g1)" stroke-width="2.2" />
+            <path d="M16 28.5L24 13L32 28.5H16Z" stroke="url(#g2)" stroke-width="2.2" stroke-linejoin="round" />
+            <path d="M19.5 28.5H28.5L24 36L19.5 28.5Z" fill="url(#g3)" />
+            <defs>
+              <linearGradient id="g1" x1="8" y1="5" x2="41" y2="43" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#6EE7FF" />
+                <stop offset="1" stop-color="#7C84FF" />
+              </linearGradient>
+              <linearGradient id="g2" x1="16" y1="13" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#EAFDFF" />
+                <stop offset="1" stop-color="#6EE7FF" />
+              </linearGradient>
+              <linearGradient id="g3" x1="19.5" y1="28.5" x2="28.5" y2="36" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#56F0A9" />
+                <stop offset="1" stop-color="#6EE7FF" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="brand-copy">
+          Seraphix Systems
+          <small>Autonomous Intelligence</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#value">Overview</a>
+        <a href="#features">Capabilities</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Signal infrastructure for decision-makers</span>
+          <h1>Autonomous Intelligence. Actionable Signals.</h1>
+          <p class="lead">
+            Seraphix Systems delivers machine-speed intelligence across maritime disruption, geopolitical events, and corporate catalysts. The platform is designed to detect high-signal anomalies early, compress them into decision-grade outputs, and route them to desks, operators, and institutions that need clarity before consensus forms. Every signal is built for timeliness, evidence density, and operational relevance.
+          </p>
+          <div class="hero-actions">
+            <a class="cta" href="/contact">Request Demo</a>
+            <a class="cta-secondary" href="#pricing">View Pricing</a>
+          </div>
+          <div class="hero-metrics" aria-label="Key advantages">
+            <div class="metric">
+              <strong>3 Core Domains</strong>
+              <span>Maritime, geopolitical, and corporate intelligence in a unified operating layer.</span>
+            </div>
+            <div class="metric">
+              <strong>Low-Latency Routing</strong>
+              <span>Built for direct delivery to teams that need signal compression, not dashboard noise.</span>
+            </div>
+            <div class="metric">
+              <strong>Institution-Ready</strong>
+              <span>Subscription tiers and enterprise workflows designed for serious buyers.</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Signal coverage preview">
+          <div>
+            <span class="eyebrow">Coverage matrix</span>
+            <h2 style="margin:18px 0 8px;font-size:2rem;line-height:1.02;letter-spacing:-0.05em;">Operational signal stack</h2>
+            <p style="margin:0;color:var(--muted);">A single intelligence surface organized around the chokepoints, catalysts, and anomalies that matter most.</p>
+          </div>
+          <div class="signal-map">
+            <div class="signal-row">
+              <label>Maritime</label>
+              <div class="signal-bar" style="--width: 92%;"></div>
+            </div>
+            <div class="signal-row">
+              <label>Geopolitical</label>
+              <div class="signal-bar" style="--width: 84%;"></div>
+            </div>
+            <div class="signal-row">
+              <label>Corporate</label>
+              <div class="signal-bar" style="--width: 79%;"></div>
+            </div>
+          </div>
+          <p style="margin:20px 0 0;color:#d5deea;">Designed to transform noisy public and open-source inputs into concise, monetizable intelligence products.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="value">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Value proposition</span>
+            <h2>Built for speed, clarity, and signal leverage.</h2>
+          </div>
+          <p>Seraphix Systems is not a generic news feed. It is a focused intelligence layer for buyers who need earlier awareness, tighter synthesis, and outputs that can move directly into action.</p>
+        </div>
+        <div class="value-grid">
+          <article class="section-card">
+            <p>Seraphix Systems captures high-value events across maritime traffic, geopolitical disruption, and corporate intelligence, then compresses them into a format institutions can use quickly.</p>
+            <p>The system prioritizes operational relevance over information overload, surfacing the anomalies that matter instead of flooding teams with undifferentiated alerts.</p>
+            <p>Signals are structured to support monitoring, escalation, and decision-making with clean evidence trails and concise delivery.</p>
+            <p>That creates a stronger commercial product for desks, researchers, operators, and enterprise buyers who care about timing edge and clarity.</p>
+          </article>
+          <aside class="section-card">
+            <ul class="bullet-list">
+              <li>Focused on commercially meaningful intelligence domains with persistent buyer demand.</li>
+              <li>Designed for recurring subscription delivery, direct enterprise engagement, and demo-led conversion.</li>
+              <li>Modern signal packaging with clean visuals, clear hierarchy, and institution-facing presentation quality.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Feature highlights</span>
+            <h2>Three intelligence lanes. One operating surface.</h2>
+          </div>
+          <p>Coverage is organized around domains where speed, evidence, and interpretation quality create direct commercial value.</p>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 17C6.5 13.5 8.5 12 12 12C15.5 12 17.5 13.5 21 17" stroke="#6EE7FF" stroke-width="1.8" stroke-linecap="round"/><path d="M4 7.5C6.8 10 8.7 11 12 11C15.3 11 17.2 10 20 7.5" stroke="#B6EDFF" stroke-width="1.8" stroke-linecap="round"/><path d="M12 4V20" stroke="#7C84FF" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Maritime Intelligence</h3>
+            <p>Track vessel behavior, chokepoints, route anomalies, and logistics disruptions that can reshape supply, pricing, and operational risk.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 18L9 10L13 14L19 6" stroke="#6EE7FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 6H15" stroke="#7C84FF" stroke-width="1.8" stroke-linecap="round"/><path d="M19 6V10" stroke="#7C84FF" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Geopolitical Signals</h3>
+            <p>Surface region-specific developments, conflict-linked disruptions, and policy shifts that require immediate interpretation and escalation.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="14" rx="3" stroke="#6EE7FF" stroke-width="1.8"/><path d="M8 9H16" stroke="#B6EDFF" stroke-width="1.8" stroke-linecap="round"/><path d="M8 13H13" stroke="#7C84FF" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Corporate Intelligence</h3>
+            <p>Identify company-specific catalysts, emerging narratives, and event-driven developments that can influence positioning, outreach, or risk posture.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Pricing tiers</span>
+            <h2>Structured for serious users and institutional expansion.</h2>
+          </div>
+          <p>Start with recurring access, scale into deeper workflows, and move qualified teams into enterprise-grade coverage.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <h3>Starter</h3>
+            <p>For early teams validating fit and signal value.</p>
+            <div class="price"><strong>$499</strong><span>/mo</span></div>
+            <ul class="tier-list">
+              <li>Entry access to the Seraphix signal layer</li>
+              <li>Recurring subscription model</li>
+              <li>Designed for lean operators and research users</li>
+            </ul>
+            <a class="cta-secondary" href="/contact">Request Demo</a>
+          </article>
+          <article class="pricing-card featured">
+            <h3>Professional</h3>
+            <p>For desks and teams that need higher-frequency signal consumption.</p>
+            <div class="price"><strong>$1,499</strong><span>/mo</span></div>
+            <ul class="tier-list">
+              <li>Expanded signal access for heavier users</li>
+              <li>Built for repeat operational monitoring</li>
+              <li>Best fit for active intelligence workflows</li>
+            </ul>
+            <a class="cta" href="/contact">Request Demo</a>
+          </article>
+          <article class="pricing-card">
+            <h3>Enterprise</h3>
+            <p>For institutional buyers, custom workflows, and dedicated coverage.</p>
+            <div class="price"><strong>$5k+</strong><span>/mo</span></div>
+            <ul class="tier-list">
+              <li>Enterprise-grade engagement and support</li>
+              <li>Custom routing and buyer-specific workflows</li>
+              <li>Structured for long-term commercial relationships</li>
+            </ul>
+            <a class="cta-secondary" href="/contact">Request Demo</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="shell">
+        <div class="cta-band">
+          <div>
+            <span class="eyebrow">Next step</span>
+            <h2>See the Seraphix signal layer in a live walkthrough.</h2>
+            <p>Request a demo to review use cases, product fit, and the commercial path for your team or institution.</p>
+          </div>
+          <a class="cta" href="/contact">Request Demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-line">
+      <span>© Seraphix Systems. Autonomous Intelligence. Actionable Signals.</span>
+      <a href="mailto:seva@seraphix.systems">seva@seraphix.systems</a>
+    </div>
+  </footer>
+</body>
+</html>
