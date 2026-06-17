@@ -4,121 +4,230 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seraphix Systems</title>
-  <meta name="description" content="Seraphix Systems" />
+  <meta name="description" content="Seraphix Systems — Precision. Depth. Autonomy." />
   <meta name="theme-color" content="#05070b" />
   <meta property="og:title" content="Seraphix Systems" />
   <meta property="og:description" content="Precision. Depth. Autonomy." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #05070b;
-      --text: #f4f7fc;
-      --muted: #8f98ab;
-      --line: rgba(255, 74, 74, 0.16);
+      --surface: #0a0d15;
+      --text: #f0f2f8;
+      --muted: #7b8196;
+      --line: rgba(255, 74, 74, 0.12);
       --accent: #ff3333;
       --accent-2: #ff6b4a;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html, body {
-      height: 100%;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 15% 20%, rgba(124, 132, 255, 0.12), transparent 28%),
-        radial-gradient(circle at 85% 12%, rgba(255, 51, 51, 0.10), transparent 24%),
-        radial-gradient(circle at 50% 100%, rgba(255, 107, 74, 0.06), transparent 30%),
+        radial-gradient(circle at 15% 20%, rgba(124, 132, 255, 0.10), transparent 28%),
+        radial-gradient(circle at 85% 12%, rgba(255, 51, 51, 0.08), transparent 24%),
+        radial-gradient(circle at 50% 100%, rgba(255, 107, 74, 0.05), transparent 30%),
         linear-gradient(180deg, #05070b 0%, #090b10 46%, #05070b 100%);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    a { color: inherit; text-decoration: none; }
+    /* ── Navigation ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      padding: 20px 24px;
+      background: rgba(5, 7, 11, 0.7);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
 
-    .container {
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.25s;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    /* ── Sections ── */
+    section {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      padding: 40px 24px;
+      padding: 100px 24px;
       text-align: center;
     }
 
+    section.hero {
+      min-height: 100vh;
+      padding-top: 100px;
+    }
+
+    section.recruit {
+      min-height: 80vh;
+    }
+
+    /* ── Mark ── */
     .mark {
-      width: 64px;
-      height: 64px;
-      padding: 10px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(255, 51, 51, 0.22), rgba(255, 107, 74, 0.14));
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06), 0 18px 40px rgba(0,0,0,0.5);
-      margin-bottom: 28px;
+      width: 72px;
+      height: 72px;
+      padding: 12px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(255, 51, 51, 0.20), rgba(255, 107, 74, 0.12));
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06), 0 20px 48px rgba(0,0,0,0.6);
+      margin-bottom: 32px;
       animation: pulse 4s ease-in-out infinite;
     }
 
     @keyframes pulse {
-      0%, 100% { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06), 0 18px 40px rgba(0,0,0,0.5); }
-      50% { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.10), 0 18px 50px rgba(255,51,51,0.12); }
+      0%, 100% { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06), 0 20px 48px rgba(0,0,0,0.6); }
+      50% { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.10), 0 20px 56px rgba(255,51,51,0.14); }
     }
 
+    /* ── Typography ── */
     h1 {
-      font-size: clamp(2.2rem, 5vw, 3.6rem);
-      letter-spacing: -0.06em;
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
       line-height: 1.05;
-      margin-bottom: 6px;
+      margin-bottom: 10px;
       max-width: 12ch;
     }
 
     .tagline {
       color: var(--muted);
-      font-size: 0.85rem;
-      letter-spacing: 0.18em;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      font-family: 'Geist Mono', ui-monospace, monospace;
-      margin-bottom: 36px;
+      margin-bottom: 40px;
     }
 
     .divider {
-      width: 40px;
+      width: 48px;
       height: 2px;
       background: linear-gradient(90deg, transparent, var(--accent-2), transparent);
-      margin: 0 auto 36px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
     }
 
     .statement {
-      max-width: 48ch;
+      max-width: 52ch;
       color: #9aa3b5;
-      font-size: 1.02rem;
-      line-height: 1.7;
-      margin-bottom: 44px;
+      font-size: 1.05rem;
+      font-weight: 400;
+      line-height: 1.75;
+      margin-top: 40px;
     }
 
-    .contact {
+    /* ── Philosophy grid ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      width: 100%;
+      margin-top: 56px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 32px 28px;
+      text-align: left;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .card:hover {
+      border-color: rgba(255, 74, 74, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    /* ── Recruiting ── */
+    .recruit-box {
+      max-width: 560px;
+      width: 100%;
+      margin-top: 48px;
+      padding: 40px 36px;
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .recruit-box p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .cta {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 10px 20px;
+      padding: 12px 26px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 74, 74, 0.25);
-      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 74, 74, 0.30);
+      background: rgba(255, 255, 255, 0.03);
       color: #c8d0dd;
-      font-size: 0.94rem;
-      font-family: 'Geist Mono', ui-monospace, monospace;
-      transition: border-color 0.25s ease, background 0.25s ease;
+      font-size: 0.92rem;
+      font-weight: 500;
+      font-family: 'Space Grotesk', monospace;
+      text-decoration: none;
+      transition: border-color 0.25s, background 0.25s;
     }
 
-    .contact:hover {
-      border-color: rgba(255, 74, 74, 0.5);
-      background: rgba(255, 255, 255, 0.04);
+    .cta:hover {
+      border-color: rgba(255, 74, 74, 0.55);
+      background: rgba(255, 255, 255, 0.06);
     }
 
-    .contact::before {
+    .cta::before {
       content: "";
       width: 6px;
       height: 6px;
@@ -127,23 +236,49 @@
       box-shadow: 0 0 14px rgba(255, 107, 74, 0.7);
     }
 
+    /* ── Footer ── */
     footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 16px 24px;
+      padding: 32px 24px;
       text-align: center;
       color: var(--muted);
-      font-size: 0.82rem;
+      font-size: 0.80rem;
+      letter-spacing: 0.04em;
       border-top: 1px solid rgba(255,255,255,0.04);
       background: rgba(5, 7, 11, 0.7);
       backdrop-filter: blur(10px);
     }
+
+    /* ── Scroll indicator ── */
+    .scroll-hint {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--muted);
+      font-size: 0.70rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      animation: fadeHint 3s ease-in-out infinite;
+    }
+
+    @keyframes fadeHint {
+      0%, 100% { opacity: 0.25; }
+      50% { opacity: 0.6; }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#principles">Principles</a>
+    <a href="#join">Join</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="hero" id="about" style="position: relative;">
     <div class="mark" aria-hidden="true">
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M24 5L40 13.5V34.5L24 43L8 34.5V13.5L24 5Z" stroke="url(#g1)" stroke-width="2.2" />
@@ -168,18 +303,81 @@
 
     <h1>Seraphix Systems</h1>
     <div class="tagline">Precision. Depth. Autonomy.</div>
-
     <div class="divider"></div>
-
     <p class="statement">
       Seraphix Systems is a proprietary trading firm. We deploy autonomous,
       systematic strategies across a focused set of derivatives — pursuing
       precision over scale, depth over breadth, and discipline over speed.
     </p>
 
-    <a class="contact" href="mailto:seva@seraphix.systems">seva@seraphix.systems</a>
-  </div>
+    <div class="scroll-hint">Scroll</div>
+  </section>
+
+  <!-- ── Principles ── -->
+  <section id="principles">
+    <h2>How We Operate</h2>
+    <div class="divider"></div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Narrow Product Set</h3>
+        <p>
+          We trade a concentrated portfolio of derivatives — mastering a
+          handful of markets with exhaustive depth rather than spreading
+          thin across thousands of instruments.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Autonomous Execution</h3>
+        <p>
+          Our engines run continuously — scanning, sizing, and executing
+          without human latency. Every decision follows codified rules
+          refined through systematic backtesting.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Founder-Controlled</h3>
+        <p>
+          No outside capital. No board meetings. We deploy our own balance
+          sheet, which means we can weather drawdowns and pursue long-term
+          research without answering to quarterly expectations.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Correctness Over Speed</h3>
+        <p>
+          We don't race on nanoseconds. We compete on mathematical rigor,
+          strategy precision, and exhaustive pre-flight verification —
+          errors are caught before deployment, not during execution.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Join ── -->
+  <section class="recruit" id="join">
+    <h2>Join Us</h2>
+    <div class="divider"></div>
+
+    <div class="recruit-box">
+      <p>
+        We're not hiring on a calendar. But if you think in probabilities,
+        write code that can't fail, or see market structure where others
+        see noise — we want to know you exist.
+      </p>
+      <p style="color: #6b7280; font-size: 0.82rem; margin-bottom: 28px;">
+        Quantitative researchers · Systems engineers · Derivatives traders
+      </p>
+      <a class="cta" href="mailto:seva@seraphix.systems">seva@seraphix.systems</a>
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section id="contact" style="min-height: 40vh;">
+    <a class="cta" href="mailto:seva@seraphix.systems">seva@seraphix.systems</a>
+  </section>
 
   <footer>© Seraphix Systems</footer>
+
 </body>
 </html>
